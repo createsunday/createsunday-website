@@ -1,8 +1,15 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Toaster } from 'react-hot-toast';
+import { useEffect } from 'react'
+import { Toaster } from 'react-hot-toast'
+import splitbee from '@splitbee/web'
 
 function MyApp({ Component, pageProps }: AppProps) {
+
+  useEffect(() => {
+    splitbee.init()
+  }, []);
+
   return (
     <>
       <Component {...pageProps} />

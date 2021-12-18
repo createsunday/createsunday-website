@@ -1,18 +1,31 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import toast from 'react-hot-toast';
 
 const Home: NextPage = () => {
+
+  const cmd = "npm create-super-app name"
+
+  const onClickCTA = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if ('clipboard' in navigator) {
+      await navigator.clipboard.writeText(cmd);
+      toast.success('Copied to clipboard');
+    } else {
+      document.execCommand('copy', true, cmd);
+      toast.success('Copied to clipboard');
+    }
+  }
+
   return (
     <div className="w-screen h-screen bg-secondary">
       <Head>
-        <title>Createsuper - Nextjs-based starter kits</title>
+        <title>Createsuper - Nextjs-based open source boilerplate</title>
         <meta name="description" content="Skip the boring parts and jumpstart your next super project in few seconds with npm and yarn." />
         <link rel="icon" href="/favicon.png" />
       </Head>
 
       <nav>
-        <div className="container flex items-center justify-between max-w-screen-md px-4 py-5 mx-auto border-b border-opacity-10 border-primary">
+        <div className="container flex items-center justify-between max-w-screen-md px-4 py-5 mx-auto border-b md:px-0 border-opacity-10 border-primary">
           <div>
             Createsuper
           </div>
@@ -27,24 +40,26 @@ const Home: NextPage = () => {
       </nav>
 
       <header>
-        <div className="container flex items-center justify-center w-full max-w-screen-md px-4 py-16 mx-auto">
+        <div className="container flex items-center justify-center w-full max-w-screen-md px-4 py-16 mx-auto md:px-0">
           <div className="prose text-center">
-            <h1>Jumpstart your next super app in seconds 🚀</h1>
+            <h1 className="!mb-4">
+              Jumpstart your next app in seconds
+            </h1>
 
-            <h3 className="!mb-8 opacity-60">
+            <h3 className="!mt-4 !mb-8 opacity-60">
               Createsuper is a nextjs-based open source boilerplate <br className="hidden md:block" /> for developers who want to turn ideas into reality faster.
             </h3>
 
-            <button type="button" className="inline-flex items-center justify-center flex-none w-full py-3 space-x-2 font-mono leading-6 text-gray-400 transition-all delay-[5] duration-200 bg-white border-2 rounded-lg border-primary sm:w-auto hover:text-primary hover:-translate-y-0.5 hover:-translate-x-0.5 active:translate-y-0 active:translate-x-0 sm:px-6 sm:space-x-4 focus:outline-none">
+            <button type="button" onClick={onClickCTA} className="inline-flex items-center justify-center flex-none w-full py-3 space-x-2 font-mono leading-6 text-gray-400 transition-all delay-[5] duration-200 bg-white border-2 rounded-lg border-primary sm:w-auto hover:text-primary sm:px-6 sm:space-x-4 focus:outline-none">
               <span className="text-primary">
-                <span className="hidden text-gray-600 sm:inline" aria-hidden="true">{"$ "}</span>
+                <span className="hidden text-gray-600 select-text sm:inline" aria-hidden="true">{"$ "}</span>
                 npm create-super-app
                 <span className="hidden text-gray-600 sm:inline" aria-hidden="true">{" name"}</span>
               </span>
               <span className="sr-only">(click to copy to clipboard)</span>
-              <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              {/* <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M8 16c0 1.886 0 2.828.586 3.414C9.172 20 10.114 20 12 20h4c1.886 0 2.828 0 3.414-.586C20 18.828 20 17.886 20 16v-4c0-1.886 0-2.828-.586-3.414C18.828 8 17.886 8 16 8m-8 8h4c1.886 0 2.828 0 3.414-.586C16 14.828 16 13.886 16 12V8m-8 8c-1.886 0-2.828 0-3.414-.586C4 14.828 4 13.886 4 12V8c0-1.886 0-2.828.586-3.414C5.172 4 6.114 4 8 4h4c1.886 0 2.828 0 3.414.586C16 5.172 16 6.114 16 8"></path>
-              </svg>
+              </svg> */}
             </button>
           </div>
         </div>

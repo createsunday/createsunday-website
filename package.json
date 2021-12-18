@@ -9,7 +9,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "vercel --prod"
+    "deploy": "vercel",
+    "predeploy": "yarn build"
   },
   "dependencies": {
     "@headlessui/react": "^1.4.2",

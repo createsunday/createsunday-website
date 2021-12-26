@@ -1,6 +1,6 @@
 {
-  "name": "createsuper",
-  "description": "createsuper.app website.",
+  "name": "@withsunday/website",
+  "description": "Sunday website.",
   "version": "0.1.0",
   "licence": "MIT",
   "author": "Christophe Ribeiro",

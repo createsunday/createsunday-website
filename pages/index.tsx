@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   return (
     <div className="w-screen h-screen bg-secondary">
       <Head>
-        <title>Createsuper - Nextjs-based open source boilerplate</title>
+        <title>Sunday - Nextjs-based open source boilerplate</title>
         <meta name="description" content="Skip the boring parts and jumpstart your next super project in few seconds with npm and yarn." />
         <link rel="icon" href="/favicon.png" />
       </Head>
@@ -24,7 +24,7 @@ const Home: NextPage = () => {
       <nav>
         <div className="container flex items-center justify-between max-w-screen-md px-4 py-5 mx-auto border-b md:px-0 border-opacity-10 border-primary">
           <div>
-            Createsuper
+            Sunday
           </div>
           <div>
             <a href="https://github.com/createsuper" title="GitHub.com/createsuper" className="text-primary hover:text-blue-500">
@@ -43,14 +43,15 @@ const Home: NextPage = () => {
               Jumpstart your next app in seconds
             </h1>
 
-            <h3 className="!mt-4 !mb-8 opacity-60">
-              Createsuper is a nextjs-based open source boilerplate <br className="hidden md:block" /> for developers who want to turn ideas into reality faster.
-            </h3>
+            <h2 className="!mt-4 !mb-8 opacity-60">
+              Sunday is a nextjs-based open source boilerplate <br className="hidden md:block" /> for developers who want to turn ideas into reality faster.
+            </h2>
 
             <button type="button" onClick={onClickCTA} className=" select-all inline-flex items-center justify-center flex-none w-full py-3 space-x-2 font-mono leading-6 text-gray-400 transition-all delay-[5] duration-200 bg-white border-2 rounded-lg border-primary sm:w-auto hover:text-primary sm:px-6 sm:space-x-4 focus:outline-none">
               <span className="text-primary">
-                npm create-super-app
-                <span className="hidden text-gray-600 sm:inline" aria-hidden="true">{" name"}</span>
+                <span className="hidden text-gray-600 sm:inline" aria-hidden="true">{"$ "}</span>
+                npm init sunday-app
+                <span className="hidden text-gray-500 sm:inline" aria-hidden="true">{" name"}</span>
               </span>
             </button>
           </div>

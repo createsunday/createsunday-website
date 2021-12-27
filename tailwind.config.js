@@ -16,6 +16,9 @@ module.exports = {
         secondary: {
           DEFAULT: '#FFF4E3',
         },
+        dark: {
+          DEFAULT: '#002129'
+        }
       },
       fontFamily: {
         title: ["Manrope", ...defaultTheme.fontFamily.sans],

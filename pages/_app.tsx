@@ -8,21 +8,25 @@ import splitbee from '@splitbee/web'
 function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
-    splitbee.init({
-      scriptUrl: "/bee.js",
-      apiUrl: "/_hive",
-    })
+    if (process.env.NODE_ENV === "production") {
+      splitbee.init({
+        scriptUrl: "/bee.js",
+        apiUrl: "/_hive",
+      })
+    }
   }, []);
 
   return (
     <>
       <Head>
-        <script async data-api="/_hive" src="/bee.js"></script>
+        {process.env.NODE_ENV === "production" && (
+          <script async data-api="/_hive" src="/bee.js"></script>
+        )}
       </Head>
       <Component {...pageProps} />
       <Toaster
         containerStyle={{
-          top: 8,
+          top: 13,
           left: 20,
           bottom: 20,
           right: 20,

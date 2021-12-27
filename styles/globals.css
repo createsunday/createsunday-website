@@ -6,6 +6,6 @@
 
 @layer base {
   body {
-    @apply antialiased bg-gray-50;
+    @apply antialiased text-dark;
   }
 }

@@ -66,7 +66,7 @@ const Home: NextPage = () => {
               for makers who want to turn ideas into reality faster.
             </h2>
 
-            <form onSubmit={onSubmit} className="flex flex-col gap-2 mx-auto md:w-1/2">
+            <form onSubmit={onSubmit} data-splitbee-event="Submit Waitlist Form" className="flex flex-col gap-2 mx-auto md:w-1/2">
               <input
                 type="email"
                 placeholder="Email"
